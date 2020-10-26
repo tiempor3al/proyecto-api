@@ -10,6 +10,7 @@ import org.jdbi.v3.core.Jdbi;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -53,6 +54,21 @@ public class UserDal {
             Optional<UserDto> userDtoOptional = dao.getUserById(userId);
             return userDtoOptional;
         });
+    }
+
+
+    public ResponseDto<List<UserDto>> getUsers() {
+        Jdbi jdbi = jdbiService.getInstance();
+
+        ResponseDto responseDto = new ResponseDto<List<UserDto>>();
+        responseDto.setSuccess(true);
+
+        jdbi.withExtension(UserDao.class, dao -> {
+            responseDto.setData(dao.getUsers());
+            return true;
+        });
+
+        return responseDto;
     }
 
 

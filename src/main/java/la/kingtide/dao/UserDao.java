@@ -8,6 +8,7 @@ import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -19,6 +20,11 @@ public interface UserDao {
     @RegisterBeanMapper(UserDto.class)
     @SqlQuery("SELECT u.id, u.name, (SELECT name FROM roles WHERE id = u.role_id LIMIT 1) AS role FROM users u WHERE id = :id")
     Optional<UserDto> getUserById(@Bind("id") UUID id);
+
+
+    @RegisterBeanMapper(UserDto.class)
+    @SqlQuery("SELECT u.id, u.name, (SELECT name FROM roles WHERE id = u.role_id LIMIT 1) AS role FROM users u")
+    List<UserDto> getUsers();
 
 
 

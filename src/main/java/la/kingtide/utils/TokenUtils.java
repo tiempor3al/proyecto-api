@@ -11,13 +11,7 @@ import java.util.HashSet;
 public class TokenUtils {
 
 
-
-
-    private TokenUtils() {
-        // no-op: utility class
-    }
-
-    public static String generateToken(UserDto userDto, Long duration) throws Exception {
+    public String generateToken(UserDto userDto, Long duration) throws Exception {
 
         var rol = new HashSet<>(Collections.singletonList(userDto.getRole()));
 
@@ -30,7 +24,7 @@ public class TokenUtils {
         return token;
     }
 
-    public static int currentTimeInSecs() {
+    private int currentTimeInSecs() {
         long currentTimeMS = System.currentTimeMillis();
         return (int) (currentTimeMS / 1000);
     }
