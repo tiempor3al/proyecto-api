@@ -57,12 +57,17 @@ public class UserDal {
     }
 
 
-    public List<UserDto> getUsers() {
+    public ResponseDto<List<UserDto>> getUsers() {
         Jdbi jdbi = jdbiService.getInstance();
 
-        return jdbi.withExtension(UserDao.class, dao -> {
-            return dao.getUsers();
+        ResponseDto responseDto = new ResponseDto<List<UserDto>>();
+        responseDto.setSuccess(true);
+
+        jdbi.withExtension(UserDao.class, dao -> {
+            responseDto.setData(dao.getUsers());
         });
+
+        return responseDto;
     }
 
 
