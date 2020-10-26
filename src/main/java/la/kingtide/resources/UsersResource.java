@@ -29,6 +29,7 @@ public class UsersResource {
     @Tag(name = "users")
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Register a new user")
     @APIResponses(value = {
             @APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON)),
