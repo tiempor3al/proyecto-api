@@ -65,6 +65,7 @@ public class UserDal {
 
         jdbi.withExtension(UserDao.class, dao -> {
             responseDto.setData(dao.getUsers());
+            return true;
         });
 
         return responseDto;
