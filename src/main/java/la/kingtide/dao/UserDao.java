@@ -13,11 +13,11 @@ import java.util.UUID;
 
 public interface UserDao {
 
-    @SqlUpdate("INSERT INTO user (name, role_id) VALUES(:u.name, 1)")
+    @SqlUpdate("INSERT INTO users (name, role_id) VALUES(:u.name, 1)")
     void createUser(@BindBean("u") UserDto userDto);
 
     @RegisterBeanMapper(UserDto.class)
-    @SqlQuery("SELECT u.id, u.name, (SELECT name FROM roles WHERE id = u.role_id LIMIT 1) AS role FROM user u WHERE id = :id")
+    @SqlQuery("SELECT u.id, u.name, (SELECT name FROM roles WHERE id = u.role_id LIMIT 1) AS role FROM users u WHERE id = :id")
     Optional<UserDto> getUserById(@Bind("id") UUID id);
 
 
