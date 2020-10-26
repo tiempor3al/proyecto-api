@@ -13,7 +13,7 @@ import java.util.UUID;
 
 public interface UserDao {
 
-    @SqlUpdate("INSERT INTO user (name, role_id) VALUES(:u.name, (SELECT id FROM roles WHERE name = :u.role LIMIT 1))")
+    @SqlUpdate("INSERT INTO user (name, role_id) VALUES(:u.name, 1)")
     void createUser(@BindBean("u") UserDto userDto);
 
     @RegisterBeanMapper(UserDto.class)
