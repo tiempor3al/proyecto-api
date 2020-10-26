@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+
+    <changeSet id="roles" author="kingtide">
+
+        <sql dbms="postgresql"
+             splitStatements="true"
+             stripComments="true">
+
+            CREATE TABLE roles
+            (
+                id SERIAL PRIMARY KEY,
+                name VARCHAR(50) NOT NULL,
+                created_at timestamp NOT NULL DEFAULT now()
+            );
+
+        </sql>
+        <rollback>
+
+            <dropTable tableName="roles"/>
+        </rollback>
+    </changeSet>
+
+
+
+    <changeSet id="users" author="kingtide">
+
+        <sql dbms="postgresql"
+             splitStatements="true"
+             stripComments="true">
+
+            CREATE TABLE users
+            (
+                id UUID NOT NULL PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
+                role_id INTEGER NOT NULL REFERENCES roles(id),
+                created_at timestamp NOT NULL DEFAULT now()
+            );
+
+        </sql>
+        <rollback>
+            <dropTable tableName="users"/>
+        </rollback>
+    </changeSet>
+
+
+
+
+
+
+
+</databaseChangeLog>
