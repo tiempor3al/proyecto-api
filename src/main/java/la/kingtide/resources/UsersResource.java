@@ -26,7 +26,7 @@ public class UsersResource {
 
 
     @POST
-    @Tag(name = "users")
+    @Tag(name = "user")
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -38,6 +38,24 @@ public class UsersResource {
         UUID userId = UUID.randomUUID();
         userDto.setId(userId);
         var responseDto = userDal.createUser(userDto);
+        return Response.ok(responseDto).build();
+    }
+
+
+
+    @GET
+    @Tag(name = "admin")
+    @Path("/all")
+    @RolesAllowed("ADMIN")
+    @SecurityRequirement(name = "bearerAuth")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Operation(summary = "Ger all users")
+    @APIResponses(value = {
+            @APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON)),
+    })
+    public Response getUser() {
+
+        var responseDto = userDal.getUsers();
         return Response.ok(responseDto).build();
     }
 
