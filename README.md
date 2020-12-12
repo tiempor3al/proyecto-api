@@ -103,10 +103,10 @@ List<ProductDto> getProducts();
 ```
 
 
-e.2.1) ¿Para qué sirve la directiva @RegisterBeanMapper?
+e.2.1) ¿Para qué sirve la directiva @RegisterBeanMapper (https://jdbi.org/#_beanmapper)? 
 
 
-e.2.2) ¿Qué deuelve el método getClients?
+e.2.2) ¿Qué deberá devolver el método getClients?
 
 
 e.3) Deberás modificar el archivo StoreDal.java y crear el método getClients() de manera similar a:
