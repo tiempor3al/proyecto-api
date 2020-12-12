@@ -1,4 +1,4 @@
-package la.kingtide;
+package fca.unam.mx;
 
 import io.quarkus.test.junit.NativeImageTest;
 

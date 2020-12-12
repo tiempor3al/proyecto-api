@@ -1,4 +1,4 @@
-package la.kingtide.dto;
+package fca.unam.mx.dto;
 
 public class ResponseDto<T> {
     private Boolean success;

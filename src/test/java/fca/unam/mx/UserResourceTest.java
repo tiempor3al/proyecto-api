@@ -1,8 +1,7 @@
-package la.kingtide;
+package fca.unam.mx;
 
 import io.quarkus.test.junit.QuarkusTest;
-import la.kingtide.dto.UserDto;
-import la.kingtide.utils.TokenUtils;
+import fca.unam.mx.utils.TokenUtils;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 
