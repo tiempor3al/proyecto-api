@@ -75,7 +75,7 @@ Este comando descargará las librerías requeridas para el proyecto, y ejecutar�
 
 ![EJECUCION](./images/ejecucion.png "EJECUCION")
 
-El modo "desarrollo" el "hot reload" de los archivos modificados.
+El modo "desarrollo" habilita la opción "hot reload". Es decir, se pueden modificar los archivos y se recompilaran mientras se ejecuta la aplicación.
 
 ### 5) Actividades
 
@@ -102,7 +102,10 @@ e.2) Modificar el archivo StoreDao.java para incluir el nuevo query getClients()
 List<ProductDto> getProducts();
 ```
 
+
 e.2.1) ¿Para qué sirve la directiva @RegisterBeanMapper?
+
+
 e.2.2) ¿Qué deuelve el método getClients?
 
 
