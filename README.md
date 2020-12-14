@@ -8,7 +8,7 @@ https://download.java.net/java/GA/jdk15.0.1/51f4f36ad4ef43e39d0dfdbaf6549e32/9/G
 
 Maven
 
-https://downloads.apache.org/maven/maven-3/3.6.3/source/apache-maven-3.6.3-src.zip
+https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip
 
 Deberás descomprimir cada archivo en una ubicación de tu elección y crear 
 las variables de ambiente JAVA_HOME y MAVEN_HOME como se muestra en estas imágenes.
