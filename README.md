@@ -9,7 +9,7 @@ https://download.java.net/java/GA/jdk20.0.1/b4887098932d415489976708ad6d1a4b/9/G
 
 Maven
 
-https://downloads.apache.org/maven/maven-3/3.9.2/binaries/apache-maven-3.9.2-bin.zip
+https://downloads.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.zip
 
 Deberás descomprimir cada archivo en una ubicación de tu elección y crear
 las variables de ambiente JAVA_HOME y MAVEN_HOME como se muestra en estas imágenes.
