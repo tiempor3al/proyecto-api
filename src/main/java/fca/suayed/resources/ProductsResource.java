@@ -3,7 +3,6 @@ package fca.suayed.resources;
 
 import fca.suayed.dal.StoreDal;
 import fca.suayed.dto.ProductDto;
-import fca.suayed.services.LogDatabase;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -21,9 +20,6 @@ public class ProductsResource {
     @Inject
     StoreDal storeDal;
 
-    @Inject
-    LogDatabase logDatabase;
-
     @GET
     @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
@@ -33,8 +29,8 @@ public class ProductsResource {
     })
     public Response getProducts() {
 
-        //var responseDto = storeDal.getProducts();
-        return Response.ok(logDatabase.toString()).build();
+        var responseDto = storeDal.getProducts();
+        return Response.ok(responseDto).build();
     }
 
     @POST
